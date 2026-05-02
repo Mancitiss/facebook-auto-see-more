@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook Auto See More</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      width: 240px;
+      background: #fff;
+      color: #1c1e21;
+    }
+
+    .header {
+      background: #1877f2;
+      color: #fff;
+      padding: 14px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .header h1 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .body {
+      padding: 16px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .status-label {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Toggle switch */
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background: #ccd0d5;
+      border-radius: 24px;
+      transition: background 0.2s;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    }
+
+    /* Disable transitions during initial state load to prevent flash animation */
+    body.no-anim .slider,
+    body.no-anim .slider::before {
+      transition: none !important;
+    }
+
+    input:checked + .slider {
+      background: #1877f2;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #65676b;
+      line-height: 1.5;
+    }
+
+    .not-facebook {
+      font-size: 12px;
+      color: #65676b;
+      text-align: center;
+      padding: 8px 0 4px;
+    }
+  </style>
+</head>
+<body class="no-anim">
+  <div class="header">
+    <img src="icons/icon48.png" alt="" />
+    <h1>Auto See More</h1>
+  </div>
+
+  <div class="body">
+    <div id="main-controls">
+      <div class="status-row">
+        <span class="status-label" id="status-text">Enabled</span>
+        <label class="toggle">
+          <input type="checkbox" id="toggle-btn" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="hint">
+        Automatically expands every "See more" button in your Facebook feed as new posts load.
+      </p>
+    </div>
+    <div id="not-facebook" class="not-facebook" style="display:none;">
+      Open Facebook to use this extension.
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
