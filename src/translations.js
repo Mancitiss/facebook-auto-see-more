@@ -6,13 +6,13 @@
  * 2. Add the "See more" phrases used by Facebook in that language as an array.
  */
 
-// missing: Esperanto, Corsican, Fula, Gaeigle, 
+// missing: Esperanto, Corsican, Fula, Gaeigle, Inuktitut, Inupiatun, 
 
 const TRANSLATIONS = {
   en: ['See more', 'See More'],
   // Future expansion example:
   az: ['Əlavə məlumat üçün bax'],
-  ba: ['Prikaži više'],
+  ba_hr: ['Prikaži više'],
   ca: ['Afficher plus'], // Francais spoken in Canada
   cz: ['Zobrazit víc'], // czech
   da: ['Se mere'], // danish
@@ -25,18 +25,23 @@ const TRANSLATIONS = {
   es_ct: ["Mostra'n més..."],
   eu: ['Gehiago ikusi'], // basque
   gb_wls: ['Gweld Mwy'], // welsh
-  br_pt: ['Ver mais'],
-  id: ['Lihat selengkapnya'],
-  it: ['Altro...'], // Friulian 
-  jv: ['Deleng liyane'],
+  br_pt: ['Ver mais'], // portuguese
+  id: ['Lihat selengkapnya'], // Indonesian
+  is: ['Sjá meira'], // Islenska
+  it: ['Altro...'], // Friulian, Italiano
+  jv: ['Deleng liyane'], // jav
+  ht: ['Wè plis'], // Ayisyen Kreyòl
   my: ['Lihat seterusnya'],
+  ng: ['Kalli wasu'], // Hausa
   nl: ['Meer weergeven'], // Frysk
   ph: ['Tan-awa ang uban pa', 'Tumingin pa'], // cebuano and filipino
   py: ['Ehechave'], // Guarani
-  so: ['Wax badan arag'],
-  tw: ['查看更多'],
-  vi: ['Xem thêm'],
-  za: ['Wys meer'],
+  rw: ['Kureba ibindi'], // Kinyarwanda
+  so: ['Wax badan arag'], // Somali
+  sw: ['Tazama zaidi'], // Kiswahili
+  tw: ['查看更多'], // Taiwan
+  vi: ['Xem thêm'], // Vietnamese
+  za: ['Wys meer'], // Afrikaans
 };
 
 /**
