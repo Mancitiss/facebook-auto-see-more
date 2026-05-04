@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Facebook Auto See More",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically clicks all 'See more' buttons on Facebook posts as they appear in your feed.",
   "permissions": ["storage"],
   "host_permissions": [
@@ -14,7 +14,7 @@
         "https://www.facebook.com/*",
         "https://facebook.com/*"
       ],
-      "js": ["content.js"],
+      "js": ["translations.js", "content.js"],
       "run_at": "document_idle"
     }
   ],

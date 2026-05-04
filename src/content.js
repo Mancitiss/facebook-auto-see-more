@@ -38,7 +38,7 @@
 
     buttons.forEach(button => {
       const text = button.textContent.trim();
-      if (text === 'See more' || text === 'See More') {
+      if (SEE_MORE_VARIANTS.includes(text)) {
         // Mark so we don't click it again
         button.dataset.fbAutoExpanded = 'true';
         button.click();
@@ -64,7 +64,9 @@
       const shouldCheck = mutations.some(mutation =>
         mutation.addedNodes.length > 0 ||
         (mutation.type === 'attributes' &&
-          mutation.target.textContent?.includes('See more'))
+          SEE_MORE_VARIANTS.some(variant => 
+            mutation.target.textContent?.includes(variant)
+          ))
       );
 
       if (shouldCheck) {
