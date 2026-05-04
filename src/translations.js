@@ -22,4 +22,4 @@ const TRANSLATIONS = {
  * This allows the extension to work across multiple languages 
  * simultaneously without needing to detect the user's locale.
  */
-const SEE_MORE_VARIANTS = Object.values(TRANSLATIONS).flat();
+const SEE_MORE_VARIANTS = new Set(Object.values(TRANSLATIONS).flat());

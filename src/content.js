@@ -38,7 +38,7 @@
 
     buttons.forEach(button => {
       const text = button.textContent.trim();
-      if (SEE_MORE_VARIANTS.includes(text)) {
+      if (SEE_MORE_VARIANTS.has(text)) {
         // Mark so we don't click it again
         button.dataset.fbAutoExpanded = 'true';
         button.click();
@@ -61,13 +61,23 @@
       document.querySelector('div[role="feed"]') || document.body;
 
     observer = new MutationObserver(mutations => {
-      const shouldCheck = mutations.some(mutation =>
-        mutation.addedNodes.length > 0 ||
-        (mutation.type === 'attributes' &&
-          SEE_MORE_VARIANTS.some(variant => 
-            mutation.target.textContent?.includes(variant)
-          ))
-      );
+      let shouldCheck = false;
+      for (const mutation of mutations) {
+        if (mutation.addedNodes.length > 0) {
+          shouldCheck = true;
+          break;
+        }
+
+        if (mutation.type === 'attributes') {
+          for (const variant of SEE_MORE_VARIANTS) {
+            if (mutation.target.textContent?.includes(variant)) {
+              shouldCheck = true;
+              break;
+            }
+          }
+          if (shouldCheck) break;
+        }
+      }
 
       if (shouldCheck) {
         setTimeout(clickSeeMore, RENDER_DELAY_MS);
