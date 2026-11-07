@@ -1,0 +1,1 @@
+this is the source code of [facebook auto see more](https://chromewebstore.google.com/detail/facebook-auto-see-more/depbcegepklhngliblfdekegnfonakdb) chrome extension created in an afternoon while clicking through facebook "see more" repeatedly.
