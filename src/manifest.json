@@ -6,12 +6,14 @@
   "permissions": ["storage"],
   "host_permissions": [
     "https://www.facebook.com/*",
+    "https://web.facebook.com/*",
     "https://facebook.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://www.facebook.com/*",
+        "https://web.facebook.com/*",
         "https://facebook.com/*"
       ],
       "js": ["translations.js", "content.js"],

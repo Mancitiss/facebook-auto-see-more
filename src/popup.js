@@ -16,7 +16,7 @@ async function getActiveTab() {
 }
 
 function isFacebookTab(tab) {
-  return tab?.url && /^https:\/\/(www\.)?facebook\.com/.test(tab.url);
+  return tab?.url && /^https:\/\/(?:(?:www|web)\.)?facebook\.com(?:[/?#]|$)/.test(tab.url);
 }
 
 function updateUI(enabled) {
